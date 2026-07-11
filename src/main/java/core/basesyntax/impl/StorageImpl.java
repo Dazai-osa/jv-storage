@@ -8,11 +8,11 @@ public class StorageImpl<K, V> implements Storage<K, V> {
    private V[] values;
 
    public StorageImpl() {
-       keys = (K[] new Object[MAX_SIZE]);
-       values = (V[] new Object[MAX_SIZE]);
+       keys = (K[]) new Object[MAX_SIZE];
+       values = (V[]) new Object[MAX_SIZE];
    }
 
-   public int currentSize = 0;
+   private int currentSize = 0;
 
     @Override
     public void put(K key, V value) {
