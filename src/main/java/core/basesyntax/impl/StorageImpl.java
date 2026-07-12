@@ -27,12 +27,12 @@ public class StorageImpl<K, V> implements Storage<K, V> {
     }
 
     private int indexOf(K key) {
-           for (int i = 0; i < currentSize; i++) {
-               if (key.equals(keys[i])) {
-                   return i;
-               }
-           }
-           return -1;
+        for (int i = 0; i < currentSize; i++) {
+            if (key.equals(keys[i])) {
+                return i;
+            }
+        }
+        return -1;
     }
 
     @Override
