@@ -19,7 +19,7 @@ public class StorageImpl<K, V> implements Storage<K, V> {
 
     }
 
-    private int indexOf(K keys) {
+    private int indexOf(K key) {
         for (int i = 0; i < currentSize; i++) {
             if (keys.equals(keys[i])) {
                 return i;
