@@ -19,7 +19,7 @@ public class StorageImpl<K, V> implements Storage<K, V> {
         int index = indexOf(key);
         if (index >= 0) {
             values[index] = value;
-        } if (index == -1 && currentSize < MAX_SIZE) {
+        } else if (index == -1 && currentSize < MAX_SIZE) {
             keys[currentSize] = key;
             values[currentSize] = value;
             currentSize++;
@@ -28,7 +28,7 @@ public class StorageImpl<K, V> implements Storage<K, V> {
 
     private int indexOf(K key) {
         for (int i = 0; i < currentSize; i++) {
-            if (keys.equals(keys[i])) {
+            if (key.equals(keys[i])) {
                 return i;
             }
         }
@@ -37,11 +37,15 @@ public class StorageImpl<K, V> implements Storage<K, V> {
 
     @Override
     public V get(K key) {
+        int index = indexOf(key);
+        if (index >= 0) {
+            return values[index];
+        }
         return null;
     }
 
     @Override
     public int size() {
-        return -1;
+        return currentSize;
     }
 }
