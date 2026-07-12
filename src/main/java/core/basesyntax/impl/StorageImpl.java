@@ -16,7 +16,19 @@ public class StorageImpl<K, V> implements Storage<K, V> {
 
     @Override
     public void put(K key, V value) {
+
     }
+
+    private int indexOf(K keys) {
+        for (int i = 0; i < currentSize; i++) {
+            if (keys.equals(keys[i])) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    public 
 
     @Override
     public V get(K key) {
